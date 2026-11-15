@@ -1,0 +1,43 @@
+/* ===== Upgrade 2: typography, motion, visual depth ===== */
+body{font-feature-settings:"liga","kern","ss01";letter-spacing:.005em}
+h1{font-size:clamp(2.2rem,5.2vw,4.4rem);line-height:1.02;letter-spacing:-.04em;text-wrap:balance}
+h2{font-size:clamp(1.5rem,3vw,2.5rem);line-height:1.1;text-wrap:balance}
+h3{line-height:1.2;text-wrap:balance}
+p,li{text-wrap:pretty;max-width:68ch}
+.mut{line-height:1.65}
+/* word-by-word heading reveal (JS adds .w spans) */
+.w{display:inline-block;opacity:0;transform:translateY(.55em) rotateX(-40deg);transform-origin:0 100%;filter:blur(6px);
+ animation:wIn .7s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--k,0)*55ms + 80ms)}
+@keyframes wIn{to{opacity:1;transform:none;filter:none}}
+/* animated underline on key headings */
+h2{position:relative;padding-bottom:.35em}
+h2::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:56px;border-radius:3px;background:linear-gradient(90deg,var(--acc,#2f3cff),#8d95ff);transform-origin:0 50%;animation:ul .9s .3s cubic-bezier(.2,.8,.2,1) both}
+@keyframes ul{from{transform:scaleX(0)}}
+/* button shine sweep */
+.btn{position:relative;overflow:hidden;isolation:isolate}
+.btn::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.28) 50%,transparent 70%);transform:translateX(-120%);transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.btn:hover::after{transform:translateX(120%)}
+/* nav polish */
+nav button{transition:color .25s,transform .2s}
+nav button:hover{transform:translateY(-1px)}
+nav button i{transition:transform .3s cubic-bezier(.3,1.6,.5,1)}
+nav button:hover i,nav button.on i{transform:scale(1.2) rotate(-6deg)}
+/* richer cards: gradient hairline border + lift */
+.card{transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .35s}
+.card::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;opacity:0;transition:opacity .35s;
+ background:linear-gradient(135deg,rgba(141,149,255,.7),transparent 40%,rgba(47,60,255,.5));
+ -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.card:hover::after{opacity:1}
+/* chips and stats */
+.chip{transition:transform .25s,background .25s}.chip:hover{transform:translateY(-2px) scale(1.04)}
+.stats div{transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s}.stats div:hover{transform:translateY(-4px);border-color:rgba(47,60,255,.45)}
+/* inputs */
+input,select{transition:border-color .25s,box-shadow .25s}
+input:focus,select:focus{outline:none;border-color:var(--acc,#2f3cff);box-shadow:0 0 0 4px rgba(47,60,255,.18)}
+/* page-load curtain */
+#ld{position:fixed;inset:0;z-index:10001;background:var(--bg,#08070d);display:grid;place-items:center;transition:opacity .5s,visibility .5s}
+#ld.x{opacity:0;visibility:hidden}
+#ld i{width:46px;height:46px;border-radius:50%;border:3px solid rgba(120,130,255,.25);border-top-color:var(--acc,#2f3cff);animation:spn .8s linear infinite}
+@keyframes spn{to{transform:rotate(360deg)}}
+::selection{background:rgba(47,60,255,.35);color:#fff}
+@media(prefers-reduced-motion:reduce){.w{animation:none;opacity:1;transform:none;filter:none}h2::after{animation:none}#ld i{animation:none}}

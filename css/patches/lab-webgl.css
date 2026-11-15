@@ -1,0 +1,5 @@
+#labPhone.gl{position:relative;overflow:hidden;border-radius:inherit;background:radial-gradient(ellipse at 50% 36%,#ffffff 0,#efeadc 72%)}
+html[data-theme=dark] #labPhone.gl{background:radial-gradient(ellipse at 50% 36%,#2b2440 0,#0b0912 80%)}
+#labPhone.gl>.stage{display:none!important}
+#labPhone.gl canvas{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none;cursor:grab}
+#labPhone.gl canvas:active{cursor:grabbing}

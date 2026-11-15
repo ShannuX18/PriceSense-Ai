@@ -1,0 +1,39 @@
+/* ===== intro: neon colour + flicker on the main title only ===== */
+#intro .it2.neon span{animation:nColor 3.6s linear infinite,nFlick 2.8s linear infinite;animation-delay:calc(var(--k)*-170ms),calc(var(--k)*-410ms);opacity:1}
+@keyframes nColor{
+ 0%{color:#ff2bd6;text-shadow:0 0 8px #ff2bd6,0 0 28px #ff2bd6,0 0 60px #ff2bd6}
+ 20%{color:#ffe14a;text-shadow:0 0 8px #ffe14a,0 0 28px #ffb400,0 0 60px #ffb400}
+ 40%{color:#2fe0ff;text-shadow:0 0 8px #2fe0ff,0 0 28px #2fe0ff,0 0 60px #2fe0ff}
+ 60%{color:#5cff8f;text-shadow:0 0 8px #5cff8f,0 0 28px #00d46a,0 0 60px #00d46a}
+ 80%{color:#8d95ff;text-shadow:0 0 8px #8d95ff,0 0 28px #2f3cff,0 0 60px #2f3cff}
+ 100%{color:#ff2bd6;text-shadow:0 0 8px #ff2bd6,0 0 28px #ff2bd6,0 0 60px #ff2bd6}}
+@keyframes nFlick{0%,5%,7%,12%,14%,60%,63%,100%{opacity:1}6%{opacity:.25}13%{opacity:.4}15%{opacity:.15}16%{opacity:1}61%{opacity:.3}62%{opacity:.9}64%{opacity:.2}65%{opacity:1}}
+/* ===== guidance line ===== */
+.ig2{margin:2px 0 0;font:600 clamp(.95rem,2.2vw,1.35rem)/1.3 'Chakra Petch',system-ui,sans-serif;letter-spacing:.03em;color:#fff;text-align:center}
+.ig2 .gp{display:inline-block}
+.am{position:relative;display:inline-block;font-family:'Syne','Segoe UI',sans-serif;font-weight:800;font-size:1.45em;letter-spacing:-.01em;padding:0 .12em;
+ background:linear-gradient(90deg,#ff2bd6,#ffb400,#2fe0ff,#5cff8f,#ff2bd6);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:amS 4s linear infinite;filter:drop-shadow(0 0 14px rgba(255,180,0,.45))}
+@keyframes amS{to{background-position:300% 0}}
+.am::after{content:"";position:absolute;left:0;right:0;bottom:-.08em;height:.14em;border-radius:4px;background:linear-gradient(90deg,#ff2bd6,#ffe14a,#2fe0ff);transform:scaleX(0);transform-origin:left;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.am.go::after{transform:scaleX(1)}
+#overview .guide{margin:0;font:600 clamp(.9rem,1.6vw,1.2rem)/1.3 'Chakra Petch',system-ui,sans-serif;letter-spacing:.03em;color:var(--mut)}
+#overview .guide .am::after{transform:scaleX(1)}
+html:not([data-theme=dark]) #overview .am{background-image:linear-gradient(90deg,#e0007a,#e08a00,#0a6cff,#00a86b,#e0007a);filter:none}
+html:not([data-theme=dark]) #overview .guide{color:var(--ink)}
+/* ===== header: tabs centred with no box, theme toggle pinned to the right corner ===== */
+@media(min-width:1101px){
+ header{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:12px}
+ header .brand{justify-self:start;min-width:0}
+ header nav{margin:0;justify-self:center;padding:0;gap:0;border:0!important;border-radius:0;background:none!important;box-shadow:none!important;overflow:visible;backdrop-filter:none}
+ header nav button{padding:12px 9px 14px;border-radius:0;background:none!important;color:var(--mut);font-size:13px}
+ header nav button i{margin-right:5px}
+ header nav button:hover:not(.on){color:var(--ink);background:none!important}
+ header nav button.on,header nav button:hover.on{color:var(--acc)!important;background:none!important}
+ html:not([data-theme=dark]) header nav button{color:var(--ink)}
+ html:not([data-theme=dark]) header nav button.on i,html:not([data-theme=dark]) header nav button:hover.on i{color:var(--acc)}
+ #pill{top:auto!important;bottom:2px;height:3px;border:0!important;border-radius:3px;background:var(--acc)!important}
+ header .themeBtn{justify-self:end;margin:0}
+}
+@media(min-width:1101px) and (max-width:1500px){header nav button i{display:none}header nav button{padding:12px 8px 14px}header .brand small{display:none}}
+
+@media(max-width:560px){#intro{gap:8px}#intro .ia2{margin-top:4px}#intro .fl[style*="bottom"]{bottom:3%!important}}

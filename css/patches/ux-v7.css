@@ -1,0 +1,29 @@
+/* ===== 3D Inspect: photo-real phones, true rounded-rectangle body ===== */
+.real{--bv:3px}
+.real .fr,.real .bk{border:0!important;box-shadow:none!important;width:calc(var(--W) - var(--bv)*2);height:calc(var(--H) - var(--bv)*2);margin:calc(var(--H)/-2 + var(--bv)) 0 0 calc(var(--W)/-2 + var(--bv));border-radius:calc(var(--R) - var(--bv))!important}
+.real .fr{background:#000;box-shadow:inset 0 0 0 3px #040406,inset 0 0 0 3.6px rgba(255,255,255,.06)!important}
+.real .bk{background:var(--fm,#444);overflow:hidden!important}
+.real .bk>*:not(.tex){display:none!important}
+.real .stp,.real .crs,.real .hng,.real .s:not(.px){display:none!important}
+.real .tex{position:absolute;left:calc(var(--bv)*-1);top:calc(var(--bv)*-1);width:var(--W);height:var(--H);background:var(--tex) var(--tp)/var(--ts) no-repeat;transform:scale(1.02)}
+.real .tex::after{content:"";position:absolute;inset:0;-webkit-mask:var(--tex) var(--tp)/var(--ts) no-repeat;mask:var(--tex) var(--tp)/var(--ts) no-repeat;
+ background:linear-gradient(104deg,transparent 30%,rgba(255,255,255,.34) 46%,rgba(255,255,255,.07) 55%,transparent 66%);background-size:280% 100%;
+ background-position:calc(50% + sin(calc((var(--ry,0) - 180)*1deg))*60%) 0;mix-blend-mode:soft-light;opacity:.9}
+.real .tex::before{content:"";position:absolute;inset:0;-webkit-mask:var(--tex) var(--tp)/var(--ts) no-repeat;mask:var(--tex) var(--tp)/var(--ts) no-repeat;background:linear-gradient(180deg,rgba(255,255,255,.14),transparent 28%,transparent 70%,rgba(0,0,0,.2));z-index:1}
+.real .fr::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:5;
+ background:linear-gradient(112deg,transparent 28%,rgba(255,255,255,.17) 44%,rgba(255,255,255,.03) 52%,transparent 60%);background-size:300% 100%;
+ background-position:calc(50% + sin(calc(var(--ry,0)*1deg))*62%) 0}
+.real .scr{inset:5px;border-radius:calc(var(--R) - var(--bv) - 4px)}
+.real .scr::after{display:none}
+.real[data-b]:not([data-b=Apple]) .nt{width:12px;height:12px;margin-left:-6px;top:10px;border-radius:50%;box-shadow:0 0 0 2px #0b0b10,inset 0 0 3px #3a4a8a}
+.real[data-b=Apple] .nt{width:84px;height:24px;margin-left:-42px;top:8px;border-radius:14px}
+.real .scr h4,.real .scr .sg b{color:#fff!important}.real .scr .row,.real .scr small.mut,.real .scr .sc2 span{color:#b7b3c9!important}.real .scr .sg p{background:rgba(255,255,255,.08)!important;border-color:rgba(255,255,255,.16)!important;color:#b7b3c9!important;box-shadow:none!important}.real .scr .sc2{background:rgba(47,60,255,.22)!important}
+.px{position:absolute;left:0;top:0;pointer-events:none;backface-visibility:visible}
+.sbtn{border-radius:2px;box-shadow:0 0 0 .6px rgba(0,0,0,.55)}
+.port{border-radius:4px;background:#040406;box-shadow:0 0 0 .8px rgba(255,255,255,.3)}
+.spk{border-radius:50%;background:#040406;box-shadow:0 0 0 .5px rgba(255,255,255,.25)}
+.gsh{position:absolute;left:50%;top:calc(50% + var(--H,480px)*.5 + 12px);width:min(70%,300px);height:34px;margin-left:calc(min(70%,300px)/-2);border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.38),rgba(0,0,0,.12) 60%,transparent);filter:blur(8px);pointer-events:none}
+html[data-theme=dark] .gsh{background:radial-gradient(closest-side,rgba(0,0,0,.7),transparent)}
+#labPhone .stage{position:relative}
+html:not([data-theme=dark]) #labPhone .stage::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,#fff 0,#f1efe8 70%);z-index:0}
+#labPhone .rig{z-index:1}

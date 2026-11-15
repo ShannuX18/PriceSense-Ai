@@ -1,0 +1,18 @@
+#cm{position:fixed;z-index:10002;width:248px;padding:10px;border-radius:20px;color:#fdf0f6;
+ background:linear-gradient(145deg,rgba(255,255,255,.16),rgba(255,255,255,.05)),rgba(20,16,32,.55);
+ -webkit-backdrop-filter:blur(24px) saturate(1.7);backdrop-filter:blur(24px) saturate(1.7);
+ border:1px solid rgba(255,255,255,.22);box-shadow:0 24px 60px -12px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.25);
+ font:600 13px 'Plus Jakarta Sans',system-ui,sans-serif;opacity:0;visibility:hidden;transform:scale(.92) translateY(6px);transform-origin:var(--ox,0) var(--oy,0);
+ transition:opacity .18s,transform .28s cubic-bezier(.2,1.2,.4,1),visibility .18s}
+#cm,#cm *{cursor:default!important}
+#cm.on{opacity:1;visibility:visible;transform:none}
+html:not([data-theme="dark"]) #cm{color:#14110f;background:linear-gradient(145deg,rgba(255,255,255,.8),rgba(255,255,255,.45)),rgba(255,255,255,.5);border-color:rgba(0,0,0,.18)}
+#cm h6{font:700 10.5px 'Chakra Petch',monospace;letter-spacing:.14em;text-transform:uppercase;opacity:.65;padding:4px 8px 8px}
+#cm button{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:11px;width:100%;padding:8px 10px;border-radius:12px;transition:background .15s,transform .15s}
+#cm button:hover,#cm button:focus-visible{background:rgba(120,130,255,.22)}
+#cm button:active{transform:scale(.97)}
+#cm button.sel{background:rgba(47,60,255,.28);box-shadow:inset 0 0 0 1px rgba(141,149,255,.6)}
+#cm .pv{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:rgba(0,0,0,.28);flex:none}
+html:not([data-theme="dark"]) #cm .pv{background:rgba(0,0,0,.08)}
+#cm .pv svg{width:20px;height:20px}
+body.cur-x #dot,body.cur-x #ring{display:none!important}

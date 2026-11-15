@@ -1,0 +1,20 @@
+/* ===== Pro upgrade layer: smoothness, GPU compositing, polish ===== */
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;-webkit-tap-highlight-color:transparent}
+.tab{overscroll-behavior:contain;scroll-behavior:smooth;scroll-padding-top:12px}
+/* heavy blur on many cards is the #1 fps killer: replace with solid glass */
+.card,.fl,.chip,.stats div{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+html:not([data-theme="light"]) .card{background:rgba(20,16,30,.9)}
+/* compositor-only animation hints + paint isolation */
+.card,.btn,.logo,#pill,.rv{will-change:transform;transform:translateZ(0);backface-visibility:hidden}
+.card{contain:layout paint style}
+.tab.on{contain:layout style}
+.btn{transition:transform .18s cubic-bezier(.2,.8,.2,1),border-color .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-2px)}.btn:active{transform:translateY(0) scale(.97)}
+.card:hover{box-shadow:0 18px 50px -22px rgba(47,60,255,.45)}
+.tab::-webkit-scrollbar{width:8px}.tab::-webkit-scrollbar-thumb{background:rgba(120,130,255,.35);border-radius:8px}
+:focus-visible{outline-offset:3px;border-radius:8px}
+/* scroll progress + live fps badge */
+#spBar{position:fixed;left:0;top:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);z-index:10000;background:linear-gradient(90deg,var(--acc,#2f3cff),#8d95ff);pointer-events:none}
+#fpsB{position:fixed;right:12px;bottom:12px;z-index:10000;padding:6px 11px;border-radius:99px;font:600 11px/1 'JetBrains Mono',ui-monospace,monospace;background:rgba(10,9,16,.85);color:#9dffb5;border:1px solid rgba(255,255,255,.15);display:none;pointer-events:none}
+#fpsB.on{display:block}
+@media(max-width:900px){.card{contain:paint}}

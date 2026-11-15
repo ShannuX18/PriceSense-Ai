@@ -1,0 +1,25 @@
+/* ===== light theme: white panels instead of black ===== */
+html:not([data-theme=dark]) .card[data-nt]{background:#fff!important;color:var(--ink)}
+html:not([data-theme=dark]) .card[data-nt] .hint{color:var(--mut)}
+html:not([data-theme=dark]) #pBox{background:#fff!important;border-color:rgba(var(--tr),.5)}
+/* ===== header controls: glow switch + theme switch, right corner ===== */
+.hctl{display:flex;align-items:center;gap:10px;justify-self:end;flex:none}
+.hctl .themeBtn{margin:0!important}
+@media(max-width:1100px){.hctl{margin-left:auto}.hctl+.burger{margin-left:0}}
+.glowBtn{font-size:16px}
+.glowBtn[aria-pressed=true]{color:#ffb400;border-color:#ffb400}
+.glowBtn[aria-pressed=true] i{filter:drop-shadow(0 0 6px #ffb400)}
+.glowBtn[aria-pressed=false] i{opacity:.55}
+.glowBtn[aria-pressed=false]::after{content:"";position:absolute;width:26px;height:2px;background:currentColor;transform:rotate(-45deg);border-radius:2px;opacity:.8}
+html:not([data-theme=dark]) .glowBtn[aria-pressed=true]{background:#ffe14a;color:var(--ink)}
+html:not([data-theme=dark]) .glowBtn[aria-pressed=true] i{filter:none}
+.glowBtn i{transform:none!important;opacity:1}
+.glowBtn[aria-pressed=false] i{opacity:.55!important}
+/* ===== glow ON: neon border glow is visible in both themes ===== */
+html[data-glow=on]:not([data-theme=dark]) .nbd,html[data-glow=on]:not([data-theme=dark]) body>canvas[aria-hidden][style*='pointer-events']{display:block!important}
+html[data-glow=on]:not([data-theme=dark]) body>canvas[aria-hidden][style*='pointer-events']{opacity:.55}
+/* ===== glow OFF: boxes stay plain ===== */
+html[data-glow=off] .nbd,html[data-glow=off] body>canvas[aria-hidden][style*='pointer-events'],html[data-glow=off] .card::after,html[data-glow=off] .card::before,html[data-glow=off] #pfx{display:none!important}
+html[data-glow=off] #pCard,html[data-glow=off] #pBox,html[data-glow=off] #pRangeBox{box-shadow:none!important}
+html[data-glow=off] #pName{text-shadow:none!important;animation:none!important}
+html[data-glow=off] .card,html[data-glow=off] .card[data-neon]{filter:none}

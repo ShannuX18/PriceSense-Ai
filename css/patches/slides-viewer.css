@@ -1,0 +1,4 @@
+/* Particle Drift full-page background */
+#pd{position:fixed;left:0;top:0;width:100vw;height:100vh;height:100dvh;z-index:0;pointer-events:none;display:block}
+html body{background-image:none!important}
+html[data-theme=dark],html[data-theme=dark] body{background:#030509!important}

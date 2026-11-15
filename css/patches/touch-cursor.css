@@ -1,0 +1,5 @@
+#tc{position:fixed;left:0;top:0;width:44px;height:44px;margin:-22px 0 0 -22px;z-index:10003;pointer-events:none;opacity:0;transform:translate3d(-99px,-99px,0);transition:opacity .2s;will-change:transform}
+#tc.on{opacity:1}
+#tc::before{content:"";position:absolute;left:50%;top:50%;width:7px;height:7px;margin:-3.5px;border-radius:50%;background:#2f3cff;box-shadow:0 0 14px #2f3cff}
+#tc::after{content:"";position:absolute;inset:3px;border-radius:50%;border:1.5px solid rgba(47,60,255,.6);background:rgba(47,60,255,.08)}
+.tp{position:fixed;width:14px;height:14px;margin:-7px;border-radius:50%;border:2px solid #2f3cff;pointer-events:none;z-index:9998;animation:rip .6s ease-out forwards}

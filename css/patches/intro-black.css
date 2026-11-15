@@ -1,0 +1,13 @@
+/* intro on pure black */
+html #intro{background:#000!important;color:#fff}
+html #intro .it2{color:#fff;text-shadow:0 0 40px rgba(47,60,255,.55)}
+html #intro .is2{color:#fff}html #intro .iu2{color:#8d95ff}html #intro #ist{color:#a59fb5}
+html #intro .ib2{background:#1b1b22;border-color:#fff}
+html #intro .sk2{background:#0b0b10;color:#fff;border-color:rgba(255,255,255,.7);box-shadow:3px 3px 0 var(--acc)}
+html #intro .fl{background:#0b0b10;border-color:rgba(255,255,255,.55);box-shadow:3px 3px 0 var(--acc)}
+html #intro .orb>i{border-color:rgba(255,255,255,.7)}html #intro .orb>i:nth-child(2){border-color:var(--v)}
+html #intro .core{border-color:#fff;box-shadow:5px 5px 0 rgba(255,255,255,.9)}
+html #intro .boom{border-color:#fff}html #intro .db{background:#fff}
+html #intro .b-ppt,html #intro .b-exp{border-color:#fff;box-shadow:4px 4px 0 #fff}
+html #intro .b-ppt:hover,html #intro .b-exp:hover{box-shadow:6px 6px 0 #fff}
+html #intro::after{background:radial-gradient(circle at 50% 45%,rgba(255,255,255,.55),transparent 55%)}

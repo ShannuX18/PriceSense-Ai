@@ -1,0 +1,4 @@
+html #intro .it2{overflow:visible;line-height:1.16;padding:.1em .06em .22em;letter-spacing:-.025em;max-width:100%}
+html #intro .it2 .il{display:block;white-space:nowrap;overflow:visible;padding:.04em .04em .1em}
+html #intro .it2 .il span{overflow:visible}
+html #intro{padding:20px max(16px,env(safe-area-inset-right)) 20px max(16px,env(safe-area-inset-left))}
